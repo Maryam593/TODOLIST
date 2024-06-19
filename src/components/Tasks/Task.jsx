@@ -107,7 +107,7 @@ const Task = () => {
               type="text"
               name=""
               id=""
-              placeholder="Enter your task Here!"
+              placeholder="Search your task Here!"
               
               className=" border-b-2 p-2 m-6"
               value={search}
