@@ -1,17 +1,19 @@
+
 import React, { useState, useEffect } from "react";
 // import deleteIcon from './assets/delete.svg';
+
 
 //to get data from local storage
 // getLocalLists = () => {
 //   let list = localStorage.getItem('lists');
 // }
-const getLocalList =() => {
+let getLocalList =() => {
   let list = localStorage.getItem('lists');
   if(list){
     return JSON.parse(localStorage.getItem('lists'));
   }
   else{
-    return []
+    return [];
   }
 }
 const Task = () => {
@@ -20,10 +22,14 @@ const Task = () => {
    const [input, setInput] = useState("");
   const [count, setCount] = useState(0);
   //**************** Search -> Filter ..............
-  // const [search, setSearch] = useState("")
-  // function handleSearch(e) {
-  //   setSearch(e.target.value)
-  // }
+    // //for searching 
+    const [search, setSearch] = useState("");
+    const handleSearch = () => {
+      const filteredList = list.filter((item) =>
+        item.text.toLowerCase().includes(search.toLowerCase())
+      );
+      setList(filteredList);
+    };
   useEffect(() => {
     console.log(list); // Log the updated list state
     setCount(list.length); // Update the count state variable
@@ -71,12 +77,14 @@ const Task = () => {
   return (
     <>
     
+
       <div className="AddTasks flex mt-10 overflow-auto m-4">
-       
+    
         <div>
+        
           <form action="">
             {/* Search bar */}
-            <input type="text" name="" id="" placeholder="find your item" className="p-2 border-b-2" />
+          
             <input
               type="text"
               name=""
@@ -92,6 +100,25 @@ const Task = () => {
               onClick={Add}
             >
               Add
+            </button>
+
+            {/* search Button */}
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Enter your task Here!"
+              
+              className=" border-b-2 p-2 m-6"
+              value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            />
+            <button
+              type="submit"
+              className="bg-sky-950 text-white p-2 rounded-3xl w-16 font-bold"
+              onClick={handleSearch}
+            >
+              Search
             </button>
           </form>
           <ul>
@@ -118,6 +145,11 @@ const Task = () => {
           </ul>
         </div>
       </div>
+{/* 
+        <div className="search mt-[1000px]"> 
+            <input type="text" name="" id="" placeholder="find your item" className="p-2 border-b-2 text-center" />
+           <button className="bg-sky-950 text-white p-2 rounded-3xl w-20 font-bold">Search</button>
+           </div> */}
     </>
   );
 };
