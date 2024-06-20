@@ -1,6 +1,7 @@
 
 import './App.css'
 import Home from './components/Page/Home'
+import axios from 'axios'
 
 function App() {
   //const [count, setCount] = useState(0)
