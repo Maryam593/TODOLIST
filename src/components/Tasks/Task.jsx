@@ -49,10 +49,14 @@ const Task = () => {
   }
 
   function handleDelete(index) {
-    const newLists = [...list];
-    newLists.splice(index, 1);
-    setList(newLists);
-    //setCount(count - 1); // Decrement count when an item is deleted
+     {
+      const confirm = window.confirm("Are you sure you want to delete this item");
+      if (confirm) {
+        const newList = [...list];
+        newList.splice(index, 1);
+        setList(newList);
+      }
+    };
   }
 
   const handleComplete = (index) => {
