@@ -10,7 +10,7 @@ function App() {
     <>
     <div className="call bg-transparent">
     <h1 className='text-center font-bold text-sky-950 text-3xl flex justify-center'>TODO LIST
-      <span className='hover:animate-shake'>🕥</span>
+      <span className='hover:animate-'>🕥</span>
     </h1>
     </div>
       <div>

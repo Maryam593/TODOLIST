@@ -29,7 +29,8 @@ const Home = () => {
   return (
     <>
    
-    <div className="cardDisplay  bg-sky-950 text-white font-bold flex w-[200px] h-[200px] justify-center items-center mt-44 rounded-[50%] shadow-2xl animate-pulse">
+    <div className="cardDisplay  bg-sky-950 text-white font-bold flex w-[200px] h-[200px] justify-center items-center mt-44 rounded-[50%] shadow-2xl ">
+      {/* animate-beatShake  */}
     {
         todoList.map((post)=> {
             const {id,task,body} = post;
