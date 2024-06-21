@@ -1,12 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-// import deleteIcon from './assets/delete.svg';
 
-
-//to get data from local storage
-// getLocalLists = () => {
-//   let list = localStorage.getItem('lists');
-// }
 let getLocalList =() => {
   let list = localStorage.getItem('lists');
   if(list){
@@ -126,6 +120,7 @@ const Task = () => {
             </button>
           </form>
           <ul>
+            {/* list => list key [0] = "Hi" */}
             {list.map((todo, index) => {
               return (
                 <li
