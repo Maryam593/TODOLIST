@@ -5,6 +5,8 @@ const AddTaskList = () => {
     const [input,setInput] = useState('')
     //for list 
     const [list, setList] = useState([]);
+
+//     
   return (
     <div>
       <ul> 
@@ -15,7 +17,9 @@ const AddTaskList = () => {
             // )
             list.map((currentTask,index) =>  (
                 <li key={index} className="flex items-center"> </li>
+            
             )) }
+              
       </ul>
     </div>
   )

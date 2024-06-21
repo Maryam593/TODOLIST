@@ -11,7 +11,9 @@ const Home = () => {
   async function getTodos ()  {
    try {
     const response = await axios.get("http://localhost:3000/AllTodos");
-    console.log(response);
+    setTodoList(response.data.data);
+    todoList.map((todo)=> console.log(todo.task))
+    // console.log(response);
    } catch (error) {
     console.log(error)
    }
@@ -25,10 +27,26 @@ const Home = () => {
  }, [])
  
   return (
+    <>
+   
+    <div className="cardDisplay  bg-sky-950 text-white font-bold flex w-[200px] h-[200px] justify-center items-center mt-44 rounded-[50%] shadow-2xl">
+    {
+        todoList.map((post)=> {
+            const {id,task,body} = post;
+          return <div className='card' key={id}>
+            
+            <h2>{task}</h2>
+            <p>{body}</p> </div>
+
+        })
+      }
+    </div>
     <div className='flex justify-center gap-7'>
       <Task/>
       {/* <AddTaskList/> */}
-    </div>
+      
+     </div>
+    </>
   )
 }
 

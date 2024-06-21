@@ -78,7 +78,7 @@ const Task = () => {
     <>
     
 
-      <div className="AddTasks flex mt-10 overflow-auto m-4">
+      <div className="AddTasks flex mt-10 overflow-auto m-4 w-[400px]">
     
         <div>
         
